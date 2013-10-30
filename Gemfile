@@ -28,6 +28,7 @@ end
 
 gem 'jquery-rails'
 gem 'devise'
+gem 'faker'
 
 
 # To use ActiveModel has_secure_password
