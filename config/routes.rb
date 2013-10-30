@@ -1,11 +1,13 @@
 Blocopedia::Application.routes.draw do
+  
+  resources :wikis
+
   devise_for :users
 
-  get "welcome/about"
+  match "about" => 'welcome#about', via: :get
 
-  get "welcome/index"
-
-  root to: 'welcome#index'
+  root :to => 'welcome#index'
+  
 end
 
  # The priority is based upon order of creation:
