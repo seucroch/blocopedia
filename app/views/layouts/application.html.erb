@@ -10,30 +10,28 @@
   <%= csrf_meta_tags %>
  
 </head>
-<body>
+  <body>
+    <div class="container">
+        <ul>
+        <li><%= link_to "Blocopedia", root_path %></li>
+        <li><%= link_to "About", about_path %></li>
 
-   
-<div class="container">
-    <ul>
-    <li><%= link_to "Blocopedia", root_path %></li>
-    <li><%= link_to "About", about_path %></li>
+        </ul>
+        <div class="pull-right user-info">
+               <% if current_user %>
+                 Hello <%= current_user.email %>! <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
+               <% else %>
+                 <%= link_to "Sign In", new_user_session_path %> or 
+                 <%= link_to "Sign Up", new_user_registration_path %>
+               <% end %>
+        </div>
 
-    </ul>
-    <div class="pull-right user-info">
-           <% if current_user %>
-             Hello <%= current_user.email %>! <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
-           <% else %>
-             <%= link_to "Sign In", new_user_session_path %> or 
-             <%= link_to "Sign Up", new_user_registration_path %>
-           <% end %>
+        <p class="notice"><%= notice %></p>
+        <p class="alert"><%= alert %></p>
+
+        <%= yield %>
+      
     </div>
-
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    
-    <%= yield %>
-  
-</div>
-</body>
-
+    <%= javascript_include_tag "application" %>
+  </body>
 </html>
