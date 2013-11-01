@@ -1,9 +1,11 @@
-<<%= form_for @wiki do |f| %>
-  <%= f.label :title %>
-  <%= f.text_field :title %>
+ <h1>New Wiki</h1>
 
-  <%= f.label :body %>
-  <%= f.text_area :body %>
+ <p>Guidelines for new Wikis:</p>
+    <ul>
+      <li>Make sure content is appropriate.</li>
+      <li>Blah blah blah</li>
+      <li>Blah blah blah</li>
+      <li>Blah blah blah</li>
+    </ul>
 
-  <%= f.submit "Save" %>
-<% end %>
+<%= render partial: 'form', locals: { wiki: @wiki} %>
