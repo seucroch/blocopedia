@@ -10,8 +10,11 @@ class Ability
      # if a member, they can manage their own posts 
     # (or create new ones)
     if user.role? :member
-      can :manage, Wiki
-     
+      can :create, Wiki
+      can :read, Wiki
+      can :update, Wiki
+      can :destroy, Wiki, :user_id => user.id
+     #can :manage, Wiki, :relationship_id => user.id
     end
 
     # Moderators can delete any post
@@ -29,7 +32,7 @@ class Ability
     end
 
     can :read, :all
-    
+    end 
     #
     # The first argument to `can` is the action you are giving the user 
     # permission to do.
@@ -48,5 +51,5 @@ class Ability
     #
     # See the wiki for details:
     # https://github.com/ryanb/cancan/wiki/Defining-Abilities
-  end
+       
 end
