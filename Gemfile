@@ -31,7 +31,7 @@ gem 'jquery-rails'
 gem 'devise'
 gem 'faker'
 gem 'redcarpet'
-
+gem 'figaro'
 
 
 # To use ActiveModel has_secure_password
