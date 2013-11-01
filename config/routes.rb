@@ -1,8 +1,8 @@
 Blocopedia::Application.routes.draw do
   
-  resources :wikis
-
   devise_for :users
+
+  resources :wikis
 
   match "about" => 'welcome#about', via: :get
 

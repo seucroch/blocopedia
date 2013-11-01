@@ -2,6 +2,8 @@
 
 <p><%= markdown @wiki.body %></p>
 
-<%= link_to "Edit", edit_wiki_path(@wiki), class: 'btn btn-mini' %>
+<% if can? :edit, @wiki %>
+  <%= link_to "Edit", edit_wiki_path(@wiki), class: 'btn btn-mini' %>
+<% end %>
 
 

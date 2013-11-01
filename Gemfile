@@ -32,6 +32,7 @@ gem 'devise'
 gem 'faker'
 gem 'redcarpet'
 gem 'figaro'
+gem 'cancan'
 
 
 # To use ActiveModel has_secure_password
