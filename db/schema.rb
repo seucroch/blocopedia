@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131101201904) do
+ActiveRecord::Schema.define(:version => 20131101222339) do
 
   create_table "users", :force => true do |t|
     t.string   "name"
@@ -40,9 +40,10 @@ ActiveRecord::Schema.define(:version => 20131101201904) do
   create_table "wikis", :force => true do |t|
     t.string   "title"
     t.text     "body"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",                   :null => false
+    t.datetime "updated_at",                   :null => false
     t.integer  "user_id"
+    t.boolean  "public",     :default => true
   end
 
   add_index "wikis", ["user_id"], :name => "index_wikis_on_user_id"

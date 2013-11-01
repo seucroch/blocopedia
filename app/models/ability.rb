@@ -11,7 +11,7 @@ class Ability
     # (or create new ones)
     if user.role? :member
       can :create, Wiki
-      can :read, Wiki
+      can :read, Wiki, public: true
       can :update, Wiki
       can :destroy, Wiki, :user_id => user.id
      #can :manage, Wiki, :relationship_id => user.id
@@ -31,7 +31,7 @@ class Ability
     can :manage, :all
     end
 
-    can :read, :all
+    can :read, Wiki, public: true
     end 
     #
     # The first argument to `can` is the action you are giving the user 
