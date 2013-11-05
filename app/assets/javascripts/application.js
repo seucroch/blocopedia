@@ -13,3 +13,19 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+
+
+// Set default options except highlight which has no default
+$(document).ready(function() {
+
+  console.log("https://gist.github.com/leommoore/4420860");
+
+
+  $("#preview").click(function() {
+    var title = $("#wiki_title").val();
+    var body = $("#wiki_body").val();
+    $("#markdown_title").val(title);
+     $("#markdown_body").val(body);
+    return false;
+  });
+});

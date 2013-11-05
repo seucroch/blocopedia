@@ -1,5 +1,5 @@
 class Wiki < ActiveRecord::Base
-  attr_accessible :body, :title
+  attr_accessible :body, :title, :public
   belongs_to :user
 
   scope :visible_to, lambda { |user| user ? scoped : where(public: true) }

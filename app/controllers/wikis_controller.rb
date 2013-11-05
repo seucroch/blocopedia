@@ -6,9 +6,10 @@ class WikisController < ApplicationController
   end
 
   def show
-    authorize! :read, @Wiki, message: "You need permission to see this Wiki."
     @wiki = Wiki.find(params[:id])
-  end
+
+    authorize! :read, @wiki, message: "You need permission to see this Wiki."
+      end
 
   def new
     @wiki = Wiki.new
