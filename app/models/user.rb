@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me, :name
   # attr_accessible :title, :body
-  has_many :wikis
+  has_many :wikis, dependent: :destroy
   before_create :set_member
 
   ROLES = %w[member premium_member admin]

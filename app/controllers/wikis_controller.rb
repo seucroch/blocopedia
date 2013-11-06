@@ -2,14 +2,23 @@ class WikisController < ApplicationController
   respond_to :html, :js
   
   def index
+    #@wikis = Wiki.visible_to(current_user)
+    @wikis = current_user.wikis.visible_to(current_user)
+  end
+
+  def all_wikis
     @wikis = Wiki.visible_to(current_user)
+  end
+
+  def collaborate
+    @wiki = Wiki.find(params[:id])
   end
 
   def show
     @wiki = Wiki.find(params[:id])
 
     authorize! :read, @wiki, message: "You need permission to see this Wiki."
-      end
+  end
 
   def new
     @wiki = Wiki.new

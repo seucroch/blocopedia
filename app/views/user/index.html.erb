@@ -1,0 +1,9 @@
+<h1>Hello <%= @user.name %></h1>
+<p>Find me in app/views/user/index.html.erb</p>
+
+    <% if @user.wikis.any? %>
+      <h3>Wikis (<%= @user.wikiss.count %>)</h3>
+       <%= render @wikis %>
+    
+      
+    <% end %>

@@ -33,6 +33,7 @@ gem 'faker'
 gem 'redcarpet'
 gem 'figaro'
 gem 'cancan'
+gem 'marked-rails'
 
 
 # To use ActiveModel has_secure_password

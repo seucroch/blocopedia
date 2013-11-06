@@ -15,6 +15,7 @@ class Ability
       can :read, Wiki, :user_id => user.id
       can :update, Wiki
       can :destroy, Wiki, :user_id => user.id
+      can :collaborate, Wiki, :user_id => user.id
      #can :manage, Wiki, :relationship_id => user.id
     end
 

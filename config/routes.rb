@@ -2,7 +2,13 @@ Blocopedia::Application.routes.draw do
   
   devise_for :users
 
+  resources :users do 
+    resources :wikis
+  end
+
   resources :wikis
+
+  match "all_wikis" => "wiki#all_wikis", via: :get
 
   match "about" => 'welcome#about', via: :get
 

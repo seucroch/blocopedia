@@ -1,15 +1,15 @@
 <h1>All Posts</h1>
 
 <% if can? :create, Wiki %>
-<%= link_to "New Wiki", new_user_wiki_path, class: 'remove-bottom button' %>
+<%= link_to "New Wiki", new_wiki_path, class: 'remove-bottom button' %>
 <% end %>
 
 <% @wikis.each do |wiki| %>
   <h4><%= link_to wiki.title, wiki %></h4>
-     
+      
       <small>
         submitted <%= time_ago_in_words(wiki.created_at) %> ago by <%= wiki.user.name if wiki.user %><br/>
-      
+       
       </small>
-      
-<% end %> 
+       
+<% end %>
