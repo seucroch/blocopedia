@@ -17,8 +17,10 @@
       <%= link_to "Delete", @wiki, method: :delete, class: 'remove-bottom button', confirm: 'Are you sure you want to delete this wiki?' %> 
   <% end %>
 
-   <% if can? :collaborate, @wiki %>
-      <%= link_to "Collaborate", collaborate_wiki_path(@wiki), class: 'remove-bottom button'%> 
+   <% if false %>
+     <% if can? :collaborate, @wiki %>
+        <%= link_to "Collaborate", collaborate_wiki_path(@wiki), class: 'remove-bottom button'%> 
+    <% end %>
   <% end %>
 </div>
 </div>
