@@ -1,6 +1,6 @@
  <div class="container">
 
-  <%= form_for [wiki], html: { class: 'form-horizontal' } do |f| %>
+  <%= form_for [@user, @wiki], :url => user_wiki_path, html: { class: 'form-horizontal' }, :method => "put" do |f| %>
   <% if wiki.errors.any? %>
     <div class="alert alert-block">
       <h4>There are <%= pluralize(wiki.errors.count, "error") %>.</h4>
@@ -32,8 +32,7 @@
 
       <div>
     
-        <textarea id="markdown_title"> </textarea>
-        
+        <div id="markdown_title" style="border:1px solid grey; height:60px;width: 200px; float: right"> </div>        
         <div id="markdown_body" style="border:1px solid gray; height: 200px; width: 200px; float: right"> </div>
        
       </div>
@@ -50,9 +49,6 @@
 
         <div class="sixteen colums">
           <%= f.submit "Save", class: 'button' %>
-              <div id="preview">
-              <%= f.button "Preview", class: 'button' %>
-              </div> 
         </div>
   </div>
 <% end %>

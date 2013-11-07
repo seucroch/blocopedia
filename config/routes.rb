@@ -6,7 +6,7 @@ Blocopedia::Application.routes.draw do
     resources :wikis
   end
 
-  resources :wikis
+ 
 
   match "all_wikis" => "wiki#all_wikis", via: :get
 

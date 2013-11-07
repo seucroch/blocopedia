@@ -20,17 +20,15 @@
 $(document).ready(function() {
 
   console.log("jquery ready");
-  $("#wiki_body").on('keypress', function() {
+  $("#wiki_body").on('keyup', function() {
       console.log("changed");
       $("#markdown_body").html(marked($("#wiki_body").val()));
   });
+   console.log("jquery ready");
+  $("#wiki_title").on('keyup', function() {
+      console.log("changed");
+      $("#markdown_title").html(marked($("#wiki_title").val()));
 
-  $("#preview").click(function() {
-    var title = $("#wiki_title").val();
-    var body = $("#wiki_body").val();
-    $("#markdown_title").val(title);
-     //$("#markdown_body").val(body);
-     $("#markdown_body").val(marked('this is a __test__.'));
-    return false;
   });
+
 });

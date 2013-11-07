@@ -5,7 +5,7 @@
 <% end %>
 
 <% @wikis.each do |wiki| %>
-  <h4><%= link_to wiki.title, wiki %></h4>
+  <h4><%= link_to user_wiki.title, wiki %></h4>
      
       <small>
         submitted <%= time_ago_in_words(wiki.created_at) %> ago by <%= wiki.user.name if wiki.user %><br/>

@@ -41,14 +41,16 @@ class WikisController < ApplicationController
 
   def edit
     @wiki = Wiki.find(params[:id])
+    @user = User.find(params[:user_id])
   end
 
    def update
     @wiki = Wiki.find(params[:id])
+    @user = User.find(params[:user_id])
     authorize! :update, @wiki, message: "You need to be signed up to do that."
     if @wiki.update_attributes(params[:wiki])
       flash[:notice] = "Wiki was updated."
-      redirect_to @wiki
+      redirect_to [@user, @wiki]
     else
       flash[:error] = "There was an error saving the wiki. Please try again."
       render :edit
