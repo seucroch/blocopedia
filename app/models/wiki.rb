@@ -12,4 +12,8 @@ class Wiki < ActiveRecord::Base
 
   has_many :relationships
   has_many :collaborators, through: :relationships
+
+  def can_edit?(user)
+  	collaborators.include? user
+  end
 end
