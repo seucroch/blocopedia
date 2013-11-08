@@ -13,16 +13,21 @@
 
 ActiveRecord::Schema.define(:version => 20131108014527) do
 
+  create_table "collaborators", :force => true do |t|
+    t.integer "wiki_id"
+    t.integer "user_id"
+  end
+
   create_table "relationships", :force => true do |t|
-    t.integer  "editor_id"
+    t.integer  "wiki_id"
     t.integer  "collaborator_id"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
   end
 
   add_index "relationships", ["collaborator_id"], :name => "index_relationships_on_collaborator_id"
-  add_index "relationships", ["editor_id", "collaborator_id"], :name => "index_relationships_on_editor_id_and_collaborator_id", :unique => true
-  add_index "relationships", ["editor_id"], :name => "index_relationships_on_editor_id"
+  add_index "relationships", ["wiki_id", "collaborator_id"], :name => "index_relationships_on_wiki_id_and_collaborator_id", :unique => true
+  add_index "relationships", ["wiki_id"], :name => "index_relationships_on_wiki_id"
 
   create_table "users", :force => true do |t|
     t.string   "name"
