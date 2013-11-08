@@ -1,0 +1,28 @@
+
+<div class="container">
+
+<h1>My Wikis</h1>
+
+  <h1><%= @user.name %></h1>
+
+  <h4> "You have "  <%= pluralize(@user.wikis.count, 'wiki') %>,</h4>
+      
+  <br/>
+
+  <div>
+      <% @wikis.each do |wikis| %>
+        <div class="media">
+          <div class="media-body">
+            <h4 class="media-heading">
+              <%= link_to wikis.title, wikis%>
+            </h4>
+            <small>
+              <%= wikis.body %>
+            </small>
+          </div>
+        </div>
+      <% end %>
+  </div>
+</div>
+
+      

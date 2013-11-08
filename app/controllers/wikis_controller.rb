@@ -7,7 +7,7 @@ class WikisController < ApplicationController
 
   def show
     @wiki = Wiki.find(params[:id])
-
+    @title = @wiki.title
     authorize! :read, @wiki, message: "You need permission to see this Wiki."
       end
 
@@ -48,7 +48,7 @@ class WikisController < ApplicationController
   
   def destroy
     @wiki = Wiki.find(params[:id])
-    title = @wiki.title
+    @title = @wiki.title
     if @wiki.destroy
       flash[:notice] = "\"#{title}\" was deleted successfully."
       redirect_to wikis_path

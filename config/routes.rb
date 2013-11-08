@@ -3,6 +3,7 @@ Blocopedia::Application.routes.draw do
   devise_for :users
 
   resources :wikis
+  resources :users, only: [:show] # create a route for users#show
 
   match "about" => 'welcome#about', via: :get
 

@@ -14,27 +14,27 @@
 <form action="wikiform">
   <div id="marked">
 
-       <div class="eigth columns clearfix">
+       <div class="siwteen columns">
         <%= control_group_tag(wiki.errors[:title]) do %>
           <%= f.label :title, class: 'control-label' %>
-              <div class="regularInput">
+              <div class="one-third column alpha">
                 <%= f.text_field :title %>
               </div>
         <% end %>
 
         <%= control_group_tag(wiki.errors[:body]) do %>
           <%= f.label :body, class: 'control-label' %>
-              <div class="controls">
+              <div class="one-third column alpha">
                 <%= f.text_area :body, rows: 8 %>
               </div>
         <% end %>
       </div>
 
-      <div>
+      <div class="one-third column omega">
     
-        <textarea id="markdown_title"> </textarea>
+        <div id="markdown_title"> </div>
         
-        <textarea id="markdown_body"> </textarea>
+        <div id="markdown_body"> </div>
        
       </div>
 
@@ -50,9 +50,7 @@
 
         <div class="sixteen colums">
           <%= f.submit "Save", class: 'button' %>
-              <div id="preview">
-              <%= f.button "Preview", class: 'button' %>
-              </div> 
+        </div> 
         </div>
   </div>
 <% end %>
