@@ -20,6 +20,8 @@ class Ability
 
     # Moderators can delete any post
     if user.role? :premium_member
+      can :add_contributors, Wiki, :user_id => user
+      
      #   can :manage, Wiki, :user_id => user.id
      #   can :update, Collaborateurs, :premium => true
      #   can :update, Privacy, :premium => true

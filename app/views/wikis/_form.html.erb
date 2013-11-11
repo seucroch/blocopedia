@@ -41,10 +41,12 @@
     
 
         <div class="control-group">
+          <% if can? :add_contributors, Wiki %>
           <%= f.label :public, class: 'control-label' %>
               <div class="controls"> 
                  <%= f.check_box :public %>
               </div>
+             <% end%> 
         </div>
 
 

@@ -16,7 +16,7 @@
   <% if @wiki.can_edit? current_user %>
   <%= link_to "Contribute", edit_wiki_path(@wiki), class: 'remove-bottom button' %>
   <% end %>
-  <% if can? :edit, @wiki %>
+  <% if can? :add_contributors, Wiki %>
     <%= link_to "Collaborate", new_wiki_collaborator_path(@wiki), class: 'remove-bottom button' %>
   <% end %>
 

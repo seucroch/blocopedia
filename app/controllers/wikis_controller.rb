@@ -46,6 +46,7 @@ class WikisController < ApplicationController
     end
   end
   
+
   def destroy
     @wiki = Wiki.find(params[:id])
     title = @wiki.title
@@ -67,6 +68,7 @@ class WikisController < ApplicationController
   end
 
   def collaborators_update
+ 
     w = Wiki.find(params[:id])
     w.clear_before_update
     params[:collaborator].each do |id, user_id|
