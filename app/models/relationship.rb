@@ -1,5 +1,5 @@
 class Relationship < ActiveRecord::Base
-	attr_accessible :wiki, :collaborator
+	attr_accessible :wiki, :collaborator, :collaborator_id
 
   belongs_to :wiki
   belongs_to :collaborator, class_name: "User"

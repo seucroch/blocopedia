@@ -16,6 +16,9 @@
   <% if @wiki.can_edit? current_user %>
   <%= link_to "Contribute", edit_wiki_path(@wiki), class: 'remove-bottom button' %>
   <% end %>
+  <% if can? :edit, @wiki %>
+    <%= link_to "Collaborate", new_wiki_collaborator_path(@wiki), class: 'remove-bottom button' %>
+  <% end %>
 
   <% if can? :destroy, @wiki %>
       <%= link_to "Delete", @wiki, method: :delete, class: 'remove-bottom button', confirm: 'Are you sure you want to delete this wiki?' %> 

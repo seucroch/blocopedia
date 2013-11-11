@@ -6,6 +6,9 @@ Blocopedia::Application.routes.draw do
   resources :users, only: [:show] # create a route for users#show
 
   match "about" => 'welcome#about', via: :get
+  match "/wikis/:id/collaborate" => 'wikis#collaborators_update', via: :post
+  match "/wikis/:id/collaborate" => 'wikis#collaborate', via: :get, :as => "new_wiki_collaborator"
+  
 
   root :to => 'welcome#index'
   

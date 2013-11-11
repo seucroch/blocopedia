@@ -48,7 +48,7 @@ class WikisController < ApplicationController
   
   def destroy
     @wiki = Wiki.find(params[:id])
-    @title = @wiki.title
+    title = @wiki.title
     if @wiki.destroy
       flash[:notice] = "\"#{title}\" was deleted successfully."
       redirect_to wikis_path
@@ -57,4 +57,21 @@ class WikisController < ApplicationController
       render :show
     end
   end
+  
+  def collaborate
+    @wiki = Wiki.find(params[:id])
+    @user = @wiki.user
+   
+    @users = User.all
+
+  end
+
+  def collaborators_update
+    w = Wiki.find(params[:id])
+    w.clear_before_update
+    params[:collaborator].each do |id, user_id|
+      Relationship.create(wiki: w, collaborator_id: user_id)
+    end
+  end
+  
 end

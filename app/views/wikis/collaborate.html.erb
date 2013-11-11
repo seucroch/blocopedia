@@ -1,0 +1,26 @@
+<h1> Test Collaborate page </h1>
+
+<h4> Check the user you want to contribute to your wiki</h4>
+
+<div>
+  <table>
+    <tbody>
+      <tr>..</tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Collaborate</th>
+  
+       <%= form_tag do %>
+       <% @users.each do |user| %>
+      <tr>
+        <td><%= user.name %></td>
+        <td><%= user.email %></td>
+        <td><%= check_box_tag "collaborator[collaborator-#{user.id}]", user.id %></td>
+      </tr>
+      <% end %>
+    </br>
+    </tbody>
+  </table>
+</div>
+  <%= submit_tag "Submit" %>
+<% end %>

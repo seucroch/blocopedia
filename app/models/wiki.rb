@@ -16,4 +16,14 @@ class Wiki < ActiveRecord::Base
   def can_edit?(user)
   	collaborators.include? user
   end
+
+   def collaborate!(other_user)
+    relationships.create!(collaborator_id: other_user.id)
+  end
+
+  def clear_before_update
+    relationships.delete_all
+  end
+
+
 end
