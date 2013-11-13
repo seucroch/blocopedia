@@ -22,7 +22,9 @@ class User < ActiveRecord::Base
     relationships.find_by(collaborator_id: other_user.id)
   end
 
-  
+  def upgrade_membership!
+    update_column :role, "premium_member"
+  end
 
   def uncollaborate!(other_user)
     relationships.find_by(collaborator_id: other_user.id).destroy!

@@ -10,11 +10,9 @@
  </head>
 
 <body>
+
   <div class="container">
-    <div class="sixteen columns">
-      <h1>Blocopedia</h1>
-    </div>
-    <div class="sixteen columns">
+    <div id="nav" class="four columns offset-by-twelve">
       <% if current_user %>
            Hello <%= link_to (current_user.name || current_user.email), edit_user_registration_path %>! <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
 
@@ -23,19 +21,27 @@
           <%= link_to "Sign Up", new_user_registration_path %>
       <% end %>       
     </div>
-
+  </div>
+  <div class="container">
+    <div class="one columns">
+      <h3>Blocopedia</h3>
+    </div>
+  </div>
 
     
-
-    <div class="eleven columns offset-by-one omega navigation">
+ <div class="container">
+    <div id= "nav" class="eight columns offset-by-eight">
         <ul class="align-right">
-          <li class="current"><%= link_to "Blocopedia", root_path %></li>
+          <li><%= link_to "Home", root_path %></li>
           <li><%= link_to "About", about_path %></li>
+          <li><%= link_to "New Wiki", new_wiki_path %></li>
+          <li><%= link_to "All Wikis", wikis_path %></li>
+        
         </ul>
     </div>
-
+</div>
     
-  </div>
+  
 
         <p class="notice"><%= notice %></p>
         <p class="alert"><%= alert %></p>
@@ -43,7 +49,7 @@
   <%= yield %>
 
     
-
+  
    
     <%= javascript_include_tag "application" %>
 </body>

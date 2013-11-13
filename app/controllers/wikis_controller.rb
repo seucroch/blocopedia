@@ -68,11 +68,16 @@ class WikisController < ApplicationController
   end
 
   def collaborators_update
- 
     w = Wiki.find(params[:id])
     w.clear_before_update
-    params[:collaborator].each do |id, user_id|
+    if params[:collaborator].each do |id, user_id|
       Relationship.create(wiki: w, collaborator_id: user_id)
+    end
+      flash[:notice] = "This wiki's collaborators were updated."
+    redirect_to wiki_path
+    else
+    flash[:notice] = "There was an error addind a collaborator."
+    redirect_to new_wiki_collaborator_path
     end
   end
   

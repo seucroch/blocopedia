@@ -1,7 +1,8 @@
 Blocopedia::Application.routes.draw do
   
   devise_for :users
-
+  
+  resources :charges
   resources :wikis
   resources :users, only: [:show] # create a route for users#show
 
@@ -11,6 +12,9 @@ Blocopedia::Application.routes.draw do
   
 
   root :to => 'welcome#index'
+
+
+
   
 end
 

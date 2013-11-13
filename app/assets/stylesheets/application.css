@@ -14,3 +14,38 @@
  = require skeleton
  *= require_tree .
  */
+#nav {
+    margin: 13px 0 0 0;
+}
+ 
+#nav ul li {
+    display: inline;
+    margin: 0 20px 0 0;
+    margin-bottom: 130px;
+}
+ 
+#nav a {
+    text-decoration: none;
+}
+ 
+#nav a:hover {
+    text-decoration: underline;
+}
+
+#intro  {
+font-size: 1.250em;
+text-align: center;
+margin-bottom: 50px;
+max-width: 100%;
+height: auto;
+color: #f1e7d8;
+border-radius: 1px;
+
+border-radius: 1px;
+padding: 12px;
+}
+
+#intro-columns {
+  text-align: center;
+}
+

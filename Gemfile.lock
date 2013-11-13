@@ -1,3 +1,11 @@
+GIT
+  remote: https://github.com/stripe/stripe-ruby
+  revision: 294d6c63b3aa5d63d03f58872622c732a54b73bc
+  specs:
+    stripe (1.8.8)
+      multi_json (>= 1.0.4, < 2)
+      rest-client (~> 1.4)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -96,6 +104,8 @@ GEM
     rdoc (3.12.2)
       json (~> 1.4)
     redcarpet (3.0.0)
+    rest-client (1.6.7)
+      mime-types (>= 1.16)
     sass (3.2.12)
     sass-rails (3.2.6)
       railties (~> 3.2.0)
@@ -140,4 +150,5 @@ DEPENDENCIES
   sass-rails (~> 3.2.3)
   skeleton-rails
   sqlite3
+  stripe!
   uglifier (>= 1.0.3)
