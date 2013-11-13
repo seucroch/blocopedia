@@ -14,45 +14,45 @@
 <form action="wikiform">
   <div id="marked">
 
-       <div class="sixteen columns">
+       <div class="eight columns alpha">
         <%= control_group_tag(wiki.errors[:title]) do %>
           <%= f.label :title, class: 'control-label' %>
-              <div class="one-third column alpha">
+            
                 <%= f.text_field :title %>
-              </div>
+          
         <% end %>
 
         <%= control_group_tag(wiki.errors[:body]) do %>
           <%= f.label :body, class: 'control-label' %>
-              <div class="one-third column alpha">
+            
                 <%= f.text_area :body, rows: 8 %>
-              </div>
+              
         <% end %>
       </div>
 
-      <div class="one-third column omega">
-    
+      <div class="eight columns omega">
+          
+         <h4> Preview </h4>
+        <%= f.label :title, class: 'control-label' %>
         <div id="markdown_title"> </div>
-        
+      
+       <%= f.label :body, class: 'control-label' %>
         <div id="markdown_body"> </div>
        
       </div>
 
     
 
-        <div class="control-group">
+        <div class="sixteen columns">
           <% if can? :add_contributors, Wiki %>
           <%= f.label :public, class: 'control-label' %>
-              <div class="controls"> 
+              
                  <%= f.check_box :public %>
-              </div>
+             
              <% end%> 
-        </div>
-
-
-        <div class="sixteen colums">
+        </br>
           <%= f.submit "Save", class: 'button' %>
-        </div> 
+        
         </div>
   </div>
 <% end %>
