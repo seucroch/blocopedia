@@ -34,11 +34,7 @@ gem 'redcarpet'
 gem 'figaro'
 gem 'cancan'
 gem 'marked-rails'
-<<<<<<< HEAD
-
-=======
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
->>>>>>> old-state
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
