@@ -1,6 +1,6 @@
  <div class="container">
 
-  <%= form_for [@user, @wiki], :url => user_wiki_path, html: { class: 'form-horizontal' }, :method => "put" do |f| %>
+  <%= form_for @wiki, :url => wikis_path, html: { class: 'form-horizontal' }, :method => "post" do |f| %>
   <% if wiki.errors.any? %>
     <div class="alert alert-block">
       <h4>There are <%= pluralize(wiki.errors.count, "error") %>.</h4>
@@ -30,12 +30,6 @@
         <% end %>
       </div>
 
-<<<<<<< HEAD
-      <div>
-    
-        <div id="markdown_title" style="border:1px solid grey; height:60px;width: 200px; float: right"> </div>        
-        <div id="markdown_body" style="border:1px solid gray; height: 200px; width: 200px; float: right"> </div>
-=======
       <div class="eight columns omega">
           
          <h4> Preview </h4>
@@ -44,7 +38,6 @@
       
        <%= f.label :body, class: 'control-label' %>
         <div id="markdown_body"> </div>
->>>>>>> old-state
        
       </div>
 
@@ -59,10 +52,6 @@
              <% end%> 
         </br>
           <%= f.submit "Save", class: 'button' %>
-<<<<<<< HEAD
-=======
-        
->>>>>>> old-state
         </div>
   </div>
 <% end %>

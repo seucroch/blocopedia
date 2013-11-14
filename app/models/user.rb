@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
   # attr_accessible :title, :body
   has_many :wikis, dependent: :destroy
   before_create :set_member
-  has_many :relationships, foreign_key: "wiki_id", dependent: :destroy
+    has_many :relationships, foreign_key: "collaborator_id", dependent: :destroy
   #has_many: collaborator_users, through: :relationships, source :collaborator
  
 

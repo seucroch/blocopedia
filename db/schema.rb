@@ -11,18 +11,12 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(:version => 20131106060126) do
-=======
-ActiveRecord::Schema.define(:version => 20131108014527) do
->>>>>>> old-state
+ActiveRecord::Schema.define(:version => 20131111033633) do
 
   create_table "collaborators", :force => true do |t|
     t.integer "wiki_id"
     t.integer "user_id"
   end
-<<<<<<< HEAD
-=======
 
   create_table "relationships", :force => true do |t|
     t.integer  "wiki_id"
@@ -34,16 +28,15 @@ ActiveRecord::Schema.define(:version => 20131108014527) do
   add_index "relationships", ["collaborator_id"], :name => "index_relationships_on_collaborator_id"
   add_index "relationships", ["wiki_id", "collaborator_id"], :name => "index_relationships_on_wiki_id_and_collaborator_id", :unique => true
   add_index "relationships", ["wiki_id"], :name => "index_relationships_on_wiki_id"
->>>>>>> old-state
 
   create_table "users", :force => true do |t|
     t.string   "name"
-    t.string   "email",                  :default => "", :null => false
-    t.string   "encrypted_password",     :default => "", :null => false
+    t.string   "email",                  :default => "",    :null => false
+    t.string   "encrypted_password",     :default => "",    :null => false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          :default => 0,  :null => false
+    t.integer  "sign_in_count",          :default => 0,     :null => false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
@@ -52,9 +45,10 @@ ActiveRecord::Schema.define(:version => 20131108014527) do
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
     t.string   "unconfirmed_email"
-    t.datetime "created_at",                             :null => false
-    t.datetime "updated_at",                             :null => false
+    t.datetime "created_at",                                :null => false
+    t.datetime "updated_at",                                :null => false
     t.string   "role"
+    t.boolean  "premium_member",         :default => false
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
