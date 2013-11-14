@@ -1,3 +1,11 @@
+GIT
+  remote: https://github.com/stripe/stripe-ruby
+  revision: 294d6c63b3aa5d63d03f58872622c732a54b73bc
+  specs:
+    stripe (1.8.8)
+      multi_json (>= 1.0.4, < 2)
+      rest-client (~> 1.4)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -30,6 +38,7 @@ GEM
       multi_json (~> 1.0)
     arel (3.0.2)
     atomic (1.1.14)
+    awesome_print (1.2.0)
     bcrypt-ruby (3.1.2)
     builder (3.0.4)
     cancan (1.6.10)
@@ -95,6 +104,8 @@ GEM
     rdoc (3.12.2)
       json (~> 1.4)
     redcarpet (3.0.0)
+    rest-client (1.6.7)
+      mime-types (>= 1.16)
     sass (3.2.12)
     sass-rails (3.2.6)
       railties (~> 3.2.0)
@@ -125,6 +136,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  awesome_print
   cancan
   coffee-rails (~> 3.2.1)
   devise
@@ -138,4 +150,5 @@ DEPENDENCIES
   sass-rails (~> 3.2.3)
   skeleton-rails
   sqlite3
+  stripe!
   uglifier (>= 1.0.3)

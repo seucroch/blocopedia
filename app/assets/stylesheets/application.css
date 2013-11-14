@@ -14,3 +14,84 @@
  = require skeleton
  *= require_tree .
  */
+#nav {
+    margin: 13px 0 0 0;
+}
+ 
+#nav ul li {
+    display: inline;
+    margin: 0 20px 0 0;
+    margin-bottom: 130px;
+}
+ 
+#nav a {
+    text-decoration: none;
+}
+ 
+#nav a:hover {
+    text-decoration: underline;
+}
+
+#intro  {
+font-size: 1.250em;
+text-align: center;
+margin-bottom: 50px;
+max-width: 100%;
+height: auto;
+color: #f1e7d8;
+border-radius: 1px;
+
+border-radius: 1px;
+padding: 12px;
+}
+
+#intro-columns {
+  text-align: center;
+}
+
+.text-box  {
+font-size: 1.250em;
+text-align: center;
+margin-bottom: 50px;
+max-width: 100%;
+height: auto;
+color: #0f2f49;
+border-radius: 1px;
+
+border-radius: 1px;
+padding: 12px;
+}
+
+#markdown_title {
+border: 1px solid #ccc;
+padding: 6px 4px;
+outline: none;
+-moz-border-radius: 2px;
+-webkit-border-radius: 2px;
+border-radius: 2px;
+font: 13px "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+color: #777;
+margin: 0;
+width: 210px;
+max-width: 100%;
+display: block;
+margin-bottom: 20px;
+background: #fff;
+}
+
+#markdown_body {
+border: 1px solid #ccc;
+padding: 6px 4px;
+outline: none;
+-moz-border-radius: 2px;
+-webkit-border-radius: 2px;
+border-radius: 2px;
+font: 13px "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+color: #777;
+margin: 0;
+width: 210px;
+max-width: 100%;
+display: block;
+margin-bottom: 20px;
+background: #fff;
+}

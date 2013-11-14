@@ -1,3 +1,7 @@
+# Testing collaborators
+Relationship.new(wiki: Wiki.find(31), collaborator: User.find(2))
+
+
 #Blocopedia
 
 This is a wiki inspired application

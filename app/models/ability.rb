@@ -13,7 +13,7 @@ class Ability
       can :create, Wiki
       can :read, Wiki, :public => true
       can :read, Wiki, :user_id => user.id
-      can :update, Wiki
+      can :update, Wiki, :user_id => user.id
       can :destroy, Wiki, :user_id => user.id
       can :collaborate, Wiki, :user_id => user.id
      #can :manage, Wiki, :relationship_id => user.id
@@ -21,6 +21,8 @@ class Ability
 
     # Moderators can delete any post
     if user.role? :premium_member
+      can :add_contributors, Wiki, :user_id => user
+      
      #   can :manage, Wiki, :user_id => user.id
      #   can :update, Collaborateurs, :premium => true
      #   can :update, Privacy, :premium => true

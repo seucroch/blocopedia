@@ -12,6 +12,7 @@ class Wiki < ActiveRecord::Base
   validates :title, length: { minimum: 5 }, presence: true
   validates :body, length: { minimum: 20 }, presence: true
   validates :user, presence: true
+<<<<<<< HEAD
   def test
     puts "hi"
   end
@@ -21,4 +22,23 @@ class Wiki < ActiveRecord::Base
       errors.add(:body, "is not foo.")
     end
   end
+=======
+
+  has_many :relationships
+  has_many :collaborators, through: :relationships
+
+  def can_edit?(user)
+  	collaborators.include? user
+  end
+
+   def collaborate!(other_user)
+    relationships.create!(collaborator_id: other_user.id)
+  end
+
+  def clear_before_update
+    relationships.delete_all
+  end
+
+
+>>>>>>> old-state
 end

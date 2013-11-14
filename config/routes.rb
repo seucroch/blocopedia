@@ -1,6 +1,7 @@
 Blocopedia::Application.routes.draw do
   
   devise_for :users
+<<<<<<< HEAD
 
   resources :users do 
     resources :wikis
@@ -9,10 +10,22 @@ Blocopedia::Application.routes.draw do
  
 
   match "all_wikis" => "wiki#all_wikis", via: :get
+=======
+  
+  resources :charges
+  resources :wikis
+  resources :users, only: [:show] # create a route for users#show
+>>>>>>> old-state
 
   match "about" => 'welcome#about', via: :get
+  match "/wikis/:id/collaborate" => 'wikis#collaborators_update', via: :post
+  match "/wikis/:id/collaborate" => 'wikis#collaborate', via: :get, :as => "new_wiki_collaborator"
+  
 
   root :to => 'welcome#index'
+
+
+
   
 end
 

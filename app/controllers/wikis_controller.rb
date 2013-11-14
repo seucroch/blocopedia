@@ -16,7 +16,7 @@ class WikisController < ApplicationController
 
   def show
     @wiki = Wiki.find(params[:id])
-
+    @title = @wiki.title
     authorize! :read, @wiki, message: "You need permission to see this Wiki."
   end
 
@@ -57,6 +57,7 @@ class WikisController < ApplicationController
     end
   end
   
+
   def destroy
     @wiki = Wiki.find(params[:id])
     title = @wiki.title
@@ -68,4 +69,27 @@ class WikisController < ApplicationController
       render :show
     end
   end
+  
+  def collaborate
+    @wiki = Wiki.find(params[:id])
+    @user = @wiki.user
+   
+    @users = User.all
+
+  end
+
+  def collaborators_update
+    w = Wiki.find(params[:id])
+    w.clear_before_update
+    if params[:collaborator].each do |id, user_id|
+      Relationship.create(wiki: w, collaborator_id: user_id)
+    end
+      flash[:notice] = "This wiki's collaborators were updated."
+    redirect_to wiki_path
+    else
+    flash[:notice] = "There was an error addind a collaborator."
+    redirect_to new_wiki_collaborator_path
+    end
+  end
+  
 end

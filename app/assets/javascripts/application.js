@@ -17,8 +17,18 @@
 
 
 // Set default options except highlight which has no default
+//= require jquery
+//= require jquery_ujs
+//= require marked
+//= require_tree .
+
+<<<<<<< HEAD
+=======
+
+// Set default options except highlight which has no default
 $(document).ready(function() {
 
+>>>>>>> old-state
   console.log("jquery ready");
   $("#wiki_body").on('keyup', function() {
       console.log("changed");

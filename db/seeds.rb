@@ -33,6 +33,9 @@ puts "#{User.count} users created"
 puts "#{Wiki.count} wikis created"
 
 
+# Add collaborators to first Wiki
+Relationship.create(wiki: Wiki.find(1), collaborator: User.find(2))
+
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
 #
