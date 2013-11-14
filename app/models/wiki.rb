@@ -12,17 +12,6 @@ class Wiki < ActiveRecord::Base
   validates :title, length: { minimum: 5 }, presence: true
   validates :body, length: { minimum: 20 }, presence: true
   validates :user, presence: true
-<<<<<<< HEAD
-  def test
-    puts "hi"
-  end
-  def is_foo
-    logger.info "reached"
-    if body != "foo"
-      errors.add(:body, "is not foo.")
-    end
-  end
-=======
 
   has_many :relationships
   has_many :collaborators, through: :relationships
@@ -38,7 +27,4 @@ class Wiki < ActiveRecord::Base
   def clear_before_update
     relationships.delete_all
   end
-
-
->>>>>>> old-state
 end

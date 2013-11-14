@@ -3,7 +3,7 @@ class WikisController < ApplicationController
   
   def index
     #@wikis = Wiki.visible_to(current_user)
-    @wikis = current_user.wikis.visible_to(current_user)
+    @wikis = Wiki.all
   end
 
   def all_wikis
@@ -41,7 +41,6 @@ class WikisController < ApplicationController
 
   def edit
     @wiki = Wiki.find(params[:id])
-    @user = User.find(params[:user_id])
   end
 
    def update
